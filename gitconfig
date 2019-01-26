@@ -1,0 +1,13 @@
+[user]
+	name = Saman Saadi
+	email = QSaman@users.noreply.github.com
+[help]
+	browser = firefox
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	trustExitCode = false
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	trustExitCode = false
