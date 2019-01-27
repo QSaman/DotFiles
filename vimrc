@@ -102,3 +102,9 @@ nnoremap <leader>gT :YcmCompleter GetType<CR>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" Enabling CTRL+C, CTRL+V for copy and paste:
+
+noremap <C-c> "+y
+noremap <C-v> "+p
+
