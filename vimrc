@@ -105,4 +105,4 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
 " set clipboard=unnamedplus
-" in insert mode you can press CTRL+r,* or CTRL+r,+ to paste form clipboard.
+" in insert mode you can press 'CTRL-r *' or 'CTRL-r +' to paste form clipboard.
