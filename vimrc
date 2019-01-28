@@ -103,6 +103,21 @@ nnoremap <leader>gT :YcmCompleter GetType<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" https://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+" If you want to actually insert all characters, including special codes such as
+" Ctrl-H, you need to press Ctrl-R twice
+" http://vim.wikia.com/wiki/Inserting_text_in_multiple_lines 
+
 " set clipboard=unnamedplus
+
+" <C-V> in insert mode:
+inoremap <C-v> <ESC>i<C-r><C-r>+
+" <C-v> in normal mode:
+nnoremap <C-v> <ESC>i<C-r><C-r>+
+" <C-c> in visual mode:
+vnoremap <C-c> "+y
+" <C-a> in insert mode
+inoremap <C-a> <ESC>ggVG
+" <C-a> in normal mode:
+nnoremap <C-a> <ESC>ggVG
 " in insert mode you can press 'CTRL-r *' or 'CTRL-r +' to paste form clipboard.
