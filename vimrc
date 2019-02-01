@@ -79,6 +79,21 @@ filetype plugin indent on
 
 runtime ftplugin/man.vim
 set t_Co=256
+
+" Use gui colors in terminal if available
+if has('termguicolors')
+
+    " Comment this line out
+    set termguicolors
+
+    "if g:spacevim_tmux
+      " If use vim inside tmux, see https://github.com/vim/vim/issues/993
+      " set Vim-specific sequences for RGB colors
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    "endif
+endif
+
 colorscheme wombat256
 
 " Enabling mouse. For copy press shift and then select text with mouse
