@@ -94,7 +94,8 @@ if has('termguicolors')
     "endif
 endif
 
-colorscheme wombat256
+"colorscheme wombat256
+colorscheme molokai
 
 " Enabling mouse. For copy press shift and then select text with mouse
 set mouse+=a
