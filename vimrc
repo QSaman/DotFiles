@@ -94,8 +94,13 @@ if has('termguicolors')
     "endif
 endif
 
-"colorscheme wombat256
-colorscheme molokai
+" colorscheme wombat256
+" colorscheme molokai
+
+" Comment the following line if you terminal doesn't support italics
+let g:gruvbox_italic = 1
+colorscheme gruvbox
+" set background=light
 
 " Enabling mouse. For copy press shift and then select text with mouse
 set mouse+=a
