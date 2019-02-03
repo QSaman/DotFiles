@@ -99,6 +99,11 @@ endif
 
 " Comment the following line if you terminal doesn't support italics
 let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 1
+" TODO Fix undercurl in terminal Vim (syntax error in youcompleteme)
+"let g:gruvbox_invert_indent_guides = 1 
+" let g:gruvbox_improved_strings = 1
+" let g:gruvbox_improved_warnings = 1
 colorscheme gruvbox
 " set background=light
 
@@ -132,9 +137,9 @@ let g:ctrlp_cmd = 'CtrlP'
 " set clipboard=unnamedplus
 
 " <C-V> in insert mode:
-inoremap <C-v> <ESC>i<C-r><C-r>+
+inoremap <C-v> <ESC>a<C-r><C-r>+
 " <C-v> in normal mode:
-nnoremap <C-v> <ESC>i<C-r><C-r>+
+nnoremap <C-v> <ESC>a<C-r><C-r>+
 " <C-c> in visual mode:
 vnoremap <C-c> "+y
 " <C-a> in insert mode
