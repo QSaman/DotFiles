@@ -147,3 +147,7 @@ inoremap <C-a> <ESC>ggVG
 " <C-a> in normal mode:
 nnoremap <C-a> <ESC>ggVG
 " in insert mode you can press 'CTRL-r *' or 'CTRL-r +' to paste form clipboard.
+
+" Enable smart case:
+set ignorecase
+set smartcase
