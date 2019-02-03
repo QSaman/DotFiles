@@ -151,3 +151,4 @@ nnoremap <C-a> <ESC>ggVG
 " Enable smart case:
 set ignorecase
 set smartcase
+set incsearch
