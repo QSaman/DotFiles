@@ -78,7 +78,8 @@ filetype plugin indent on
 " set spell
 
 runtime ftplugin/man.vim
-set t_Co=256
+" We don't need the following line because we are enabling termguicolors
+" set t_Co=256
 
 " Use gui colors in terminal if available
 if has('termguicolors')
@@ -88,9 +89,9 @@ if has('termguicolors')
 
     "if g:spacevim_tmux
       " If use vim inside tmux, see https://github.com/vim/vim/issues/993
-      " set Vim-specific sequences for RGB colors
-      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      " set Vim-specific sequences for RGB colors (if you enalbe t_Co)
+      " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     "endif
 endif
 
