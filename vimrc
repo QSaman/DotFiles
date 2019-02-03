@@ -100,11 +100,16 @@ endif
 " Comment the following line if you terminal doesn't support italics
 let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 1
-" TODO Fix undercurl in terminal Vim (syntax error in youcompleteme)
+" TODO Fix undercurl in terminal Vim (syntax error in youcompleteme). The
+" current workaround is to disable undercurl before enabling gruvbox and
+" setting underline as cterm after setting gruvebox
+let g:gruvbox_undercurl = 0
 "let g:gruvbox_invert_indent_guides = 1 
 " let g:gruvbox_improved_strings = 1
 " let g:gruvbox_improved_warnings = 1
 colorscheme gruvbox
+" TODO If you could enable undercurl in terminal, delete the follwoing line
+highlight SpellBad cterm=underline
 " set background=light
 
 " Enabling mouse. For copy press shift and then select text with mouse
