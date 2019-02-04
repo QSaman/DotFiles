@@ -98,7 +98,9 @@ endif
 " colorscheme wombat256
 " colorscheme molokai
 
-" Comment the following line if you terminal doesn't support italics
+" Comment the following line if you terminal doesn't support italics. For
+" example if you connect to a remote server using ssh and grubvox isn't
+" rednered properly
 let g:gruvbox_italic = 1
 let g:gruvbox_italicize_strings = 1
 " TODO Fix undercurl in terminal Vim (syntax error in youcompleteme). The
