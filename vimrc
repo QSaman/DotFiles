@@ -78,6 +78,8 @@ filetype plugin indent on
 " set spell
 
 runtime ftplugin/man.vim
+"https://vi.stackexchange.com/questions/780/how-to-jump-between-matching-html-xml-tags 
+runtime macros/matchit.vim
 " We don't need the following line because we are enabling termguicolors
 " set t_Co=256
 
