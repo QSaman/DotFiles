@@ -164,3 +164,6 @@ nnoremap <C-a> <ESC>ggVG
 set ignorecase
 set smartcase
 set incsearch
+
+" https://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging
+" set t_ut=
