@@ -147,9 +147,9 @@ let g:ctrlp_cmd = 'CtrlP'
 " set clipboard=unnamedplus
 
 " <C-V> in insert mode:
-inoremap <C-v> <ESC>i<C-r><C-r>+
+inoremap <C-v> <C-r><C-r>+
 " <C-v> in normal mode:
-nnoremap <C-v> <ESC>a<C-r><C-r>+
+nnoremap <C-v> a<C-r><C-r>+
 " <C-v> in visual mode:
 vnoremap <C-v> d<ESC>i<C-r><C-r>+
 " <C-c> in visual mode:
