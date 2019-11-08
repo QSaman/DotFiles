@@ -22,7 +22,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'lyuts/vim-rtags'
+Plugin 'lyuts/vim-rtags'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 " Plugin 'https://github.com/mileszs/ack.vim.git'
@@ -167,3 +167,5 @@ set incsearch
 
 " https://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging
 " set t_ut=
+
+set listchars=tab:->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
