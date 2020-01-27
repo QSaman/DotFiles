@@ -115,7 +115,7 @@ let g:gruvbox_undercurl = 0
 colorscheme gruvbox
 " TODO If you could enable undercurl in terminal, delete the follwoing line
 highlight SpellBad cterm=underline
-" set background=light
+set background=dark
 
 " Enabling mouse. For copy press shift and then select text with mouse
 set mouse+=a
