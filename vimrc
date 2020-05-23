@@ -36,6 +36,7 @@ Plugin 'vim-airline/vim-airline'
 " Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 " Plugin 'Yggdroot/indentLine'
 " Plugin 'https://github.com/vim-scripts/vim-sjson.git'
+Plugin 'nelsyeung/twig.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
