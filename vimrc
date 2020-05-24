@@ -170,3 +170,4 @@ set incsearch
 " set t_ut=
 
 set listchars=tab:->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
+let g:ctrlp_working_path_mode = 0
