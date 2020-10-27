@@ -1,6 +1,7 @@
 [user]
 	name = Saman Saadi
 	email = QSaman@users.noreply.github.com
+	signingkey = 53DA4726ED100D5E
 [help]
 	browser = firefox
 [merge]
