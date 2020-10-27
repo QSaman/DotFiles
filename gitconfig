@@ -14,3 +14,5 @@
 	#guitool = kdiff3
 [difftool "kdiff3"]
 	trustExitCode = false
+[commit]
+	gpgsign = true
