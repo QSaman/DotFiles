@@ -15,4 +15,4 @@
 [difftool "kdiff3"]
 	trustExitCode = false
 [commit]
-	gpgsign = true
+	gpgsign = false
