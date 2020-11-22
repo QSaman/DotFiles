@@ -6,3 +6,6 @@ if [ -e /usr/bin/vimx ]
 then
 	alias vim="/usr/bin/vimx"
 fi
+
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
