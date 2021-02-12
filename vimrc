@@ -24,7 +24,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'lyuts/vim-rtags'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'https://github.com/mileszs/ack.vim.git'
 " Plugin 'https://github.com/majutsushi/tagbar.git'
 " Plugin 'https://github.com/xolox/vim-easytags.git'
@@ -135,10 +135,18 @@ nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 nnoremap <leader>gT :YcmCompleter GetType<CR>
 
-" CtrlP shortcuts:
+" CtrlP Settings:
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp = 1
+
+" https://stackoverflow.com/questions/21346068/slow-performance-on-ctrlp-it-doesnt-work-to-ignore-some-folders/22784889#22784889
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 " If you want to actually insert all characters, including special codes such as
