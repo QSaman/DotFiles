@@ -135,6 +135,8 @@ nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 nnoremap <leader>gT :YcmCompleter GetType<CR>
 
+let g:ycm_auto_hover=''
+
 " CtrlP Settings:
 
 let g:ctrlp_map = '<c-p>'
