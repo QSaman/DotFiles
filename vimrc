@@ -178,8 +178,5 @@ set ignorecase
 set smartcase
 set incsearch
 
-" https://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging
-" set t_ut=
-
 set listchars=tab:<->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
 let g:ctrlp_working_path_mode = 0
