@@ -180,3 +180,15 @@ set incsearch
 
 set listchars=tab:<->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
 let g:ctrlp_working_path_mode = 0
+
+" Mintty settings (Cygwin or Msys2)***************
+" syntax on
+" https://superuser.com/questions/634326/how-can-i-get-a-block-cursor-in-vim-in-the-cygwin-terminal:
+" let &t_ti.="\e[1 q"
+" let &t_SI.="\e[5 q"
+" let &t_EI.="\e[1 q"
+" let &t_te.="\e[0 q"
+
+" set encoding=utf-8
+
+" End of Mintty Settings***************
