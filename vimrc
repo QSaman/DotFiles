@@ -81,25 +81,24 @@ filetype plugin indent on
 runtime ftplugin/man.vim
 "https://vi.stackexchange.com/questions/780/how-to-jump-between-matching-html-xml-tags 
 runtime macros/matchit.vim
-" We don't need the following line because we are enabling termguicolors
-" set t_Co=256
 
-" Use gui colors in terminal if available
+" Use 24-bit true color in terminal if available
 if has('termguicolors')
 
-    " Comment this line out
+    " Comment this line out. Note if 24-bit true color is not enabled in terminal, it makes Vim colorless.
+    " For more information type :h xterm-true-color. The following links are helpful:
+    " https://stackoverflow.com/questions/62702766/termguicolors-in-vim-makes-everything-black-and-white
+    " https://gist.github.com/XVilka/8346728
     set termguicolors
-
-    "if g:spacevim_tmux
-      " If use vim inside tmux, see https://github.com/vim/vim/issues/993
-      " set Vim-specific sequences for RGB colors (if you enalbe t_Co)
-      " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-      " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    "endif
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
 " colorscheme wombat256
 " colorscheme molokai
+
+" For gruvbox settings refer to:
+" https://github.com/morhetz/gruvbox/wiki/Configuration 
 
 " Comment the following line if you terminal doesn't support italics. For
 " example if you connect to a remote server using ssh and grubvox isn't
@@ -109,18 +108,20 @@ let g:gruvbox_italicize_strings = 1
 " TODO Fix undercurl in terminal Vim (syntax error in youcompleteme). The
 " current workaround is to disable undercurl before enabling gruvbox and
 " setting underline as cterm after setting gruvebox
-let g:gruvbox_undercurl = 0
-"let g:gruvbox_invert_indent_guides = 1 
-" let g:gruvbox_improved_strings = 1
-" let g:gruvbox_improved_warnings = 1
+let g:gruvbox_undercurl = 1
+" let g:gruvbox_invert_indent_guides = 1 
+" let g:gruvbox_invert_tabline = 1
+let g:gruvbox_improved_strings = 1
+let g:gruvbox_improved_warnings = 1
+let g:gruvbox_guisp_fallback = 'bg'
 colorscheme gruvbox
 " TODO If you could enable undercurl in terminal, delete the follwoing line
-highlight SpellBad cterm=underline
+" highlight SpellBad cterm=underline
 set background=dark
 
 " Enabling mouse. For copy press shift and then select text with mouse
 set mouse+=a
-if &term =~ '^screen'
+if &term =~ '^screen' || &term =~ '^tmux'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
@@ -134,6 +135,7 @@ nnoremap <leader>gt :YcmCompleter GoTo<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 nnoremap <leader>gT :YcmCompleter GetType<CR>
+nnoremap <leader>f :YcmCompleter Format<CR>
 
 let g:ycm_auto_hover=''
 
@@ -179,5 +181,5 @@ set incsearch
 " https://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging
 " set t_ut=
 
-set listchars=tab:->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
+set listchars=tab:<->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
 let g:ctrlp_working_path_mode = 0
