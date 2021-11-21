@@ -1,4 +1,21 @@
-# Powered by rcm
+# How to Install
+
+You need to install `rcm` first.
+
+## Fedora
+
+```
+$ sudo dnf install rcm
+```
+
+## Ubuntu
+
+```
+$ sudo apt install rcm
+```
+
+# Use the Dot Files
+
 After cloning this project run the following command:
 
 ```

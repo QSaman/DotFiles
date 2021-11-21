@@ -38,6 +38,8 @@ Plugin 'vim-airline/vim-airline'
 " Plugin 'https://github.com/vim-scripts/vim-sjson.git'
 Plugin 'nelsyeung/twig.vim'
 
+Plugin 'bfrg/vim-cpp-modern'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
