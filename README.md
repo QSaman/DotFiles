@@ -16,11 +16,10 @@ $ sudo apt install rcm
 
 # Use the Dot Files
 
-After cloning this project run the following command:
+It's not mandatory but it's recommended to clone the repo like this:
 
 ```
-$ rcup -v
-$ echo '. $HOME/.bashrc_custom' >> ~/.bashrc
+git clone https://github.com/QSaman/DotFiles.git ~/.dotfiles
 ```
 
-for more information see this [link](https://fedoramagazine.org/managing-dotfiles-rcm/)
+Then run `bootstrap.sh` script. For more information visit this [link](https://fedoramagazine.org/managing-dotfiles-rcm/).
