@@ -11,7 +11,7 @@ then
   echo $profile_custom >> $HOME/.profile
 fi
 
-if [ "$bashrc_init_before" == "" ]
+if [ $SHELL == "/bin/bash" ] && [ "$bashrc_init_before" == "" ]
 then
   echo $bashrc_custom >> $HOME/.bashrc
 fi
