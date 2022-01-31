@@ -22,7 +22,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'lyuts/vim-rtags'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'https://github.com/mileszs/ack.vim.git'
@@ -182,6 +181,9 @@ set incsearch
 
 set listchars=tab:<->,eol:$,trail:.,nbsp:.,extends:>,precedes:<
 let g:ctrlp_working_path_mode = 0
+
+" Tabs are not buffers!
+set hidden
 
 " Mintty settings (Cygwin or Msys2)***************
 " syntax on
