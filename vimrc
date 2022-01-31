@@ -1,78 +1,29 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Make sure you use single quotes
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/Smart-Tabs'
+Plug 'vim-airline/vim-airline'
+Plug 'nelsyeung/twig.vim'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-
-" Plugin 'https://github.com/vim-syntastic/syntastic.git'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'https://github.com/mileszs/ack.vim.git'
-" Plugin 'https://github.com/majutsushi/tagbar.git'
-" Plugin 'https://github.com/xolox/vim-easytags.git'
-" Plugin 'https://github.com/xolox/vim-misc.git'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-scripts/a.vim'
-Plugin 'vim-scripts/Smart-Tabs'
-Plugin 'vim-airline/vim-airline'
-" Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-" Plugin 'Yggdroot/indentLine'
-" Plugin 'https://github.com/vim-scripts/vim-sjson.git'
-Plugin 'nelsyeung/twig.vim'
-
-Plugin 'bfrg/vim-cpp-modern'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-"
-" 
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-
-" For avoiding easytags slow down VM
-"let g:easytags_syntax_keyword = 'always'
-" let g:easytags_async=1
-" let g:easytags_auto_highlight=0
-" set backspace=indent,eol,start
-
+" Initialize plugin system
+call plug#end()
 
 " See ~/.vim/after/ftplugin directory for language-based customization:
 filetype plugin indent on
