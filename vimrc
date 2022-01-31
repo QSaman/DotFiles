@@ -10,17 +10,17 @@ call plug#begin()
 " Make sure you use single quotes
 
 Plug 'tpope/vim-fugitive'
-Plug 'git://git.wincent.com/command-t.git'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/a.vim'
-Plug 'vim-scripts/Smart-Tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'nelsyeung/twig.vim'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-rhubarb'
+
 
 " Initialize plugin system
 call plug#end()
