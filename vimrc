@@ -136,6 +136,12 @@ let g:ctrlp_working_path_mode = 0
 " Tabs are not buffers!
 set hidden
 
+"MacOS settings
+" syntax on
+" set backspace=indent,eol,start
+" set hls
+"End of MacOS settings
+
 " Mintty settings (Cygwin or Msys2)***************
 " syntax on
 " https://superuser.com/questions/634326/how-can-i-get-a-block-cursor-in-vim-in-the-cygwin-terminal:
