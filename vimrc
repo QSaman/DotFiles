@@ -132,20 +132,21 @@ endif
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-l> :Buffers<Cr>
 
-"MacOS settings
-" syntax on
-" set backspace=indent,eol,start
-" set hls
-"End of MacOS settings
+" For more information try :h feature-list
+" For Linux-specific use has("linux")
+if has("macunix") || has("mac")
+	" echo 'mac or macunix'
+	syntax on
+	set backspace=indent,eol,start
+	set hls
+elseif has("win32") || has("win32unix")
+	" echo 'win32 or win32unix'
+	syntax on
+	" https://superuser.com/questions/634326/how-can-i-get-a-block-cursor-in-vim-in-the-cygwin-terminal:
+	let &t_ti.="\e[1 q"
+	let &t_SI.="\e[5 q"
+	let &t_EI.="\e[1 q"
+	let &t_te.="\e[0 q"
 
-" Mintty settings (Cygwin or Msys2)***************
-" syntax on
-" https://superuser.com/questions/634326/how-can-i-get-a-block-cursor-in-vim-in-the-cygwin-terminal:
-" let &t_ti.="\e[1 q"
-" let &t_SI.="\e[5 q"
-" let &t_EI.="\e[1 q"
-" let &t_te.="\e[0 q"
-
-" set encoding=utf-8
-
-" End of Mintty Settings***************
+	set encoding=utf-8
+endif
