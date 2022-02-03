@@ -1,9 +1,7 @@
 #!/bin/bash 
 
-profile_custom=". $HOME/.profile_custom"
 bashrc_custom=". $HOME/.bashrc_custom"
 
-profile_init_before=$(cat $HOME/.profile 2> /dev/null | grep "$profile_custom")
 bashrc_init_before=$(cat $HOME/.bashrc 2> /dev/null | grep "$bashrc_custom")
 
 if [ "$profile_init_before" == "" ]
