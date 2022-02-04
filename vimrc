@@ -10,7 +10,12 @@ call plug#begin()
 " Make sure you use single quotes
 
 Plug 'tpope/vim-fugitive'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/a.vim'
@@ -80,17 +85,108 @@ endif
 
 " YouCompleteMe Shortcuts (leader is \ character):
 
-nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gD :YcmCompleter GoToDeclaration<CR>
 
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
+"nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
-nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
-nnoremap <leader>gT :YcmCompleter GetType<CR>
-nnoremap <leader>f :YcmCompleter Format<CR>
+"nnoremap <leader>gT :YcmCompleter GetType<CR>
+"nnoremap <leader>f :YcmCompleter Format<CR>
 
-let g:ycm_auto_hover=''
+"let g:ycm_auto_hover=''
 
+" ******************************************************************************
+" asyncomplete settings:
+"
+" Tab completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" Force refresh completion
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+" For Vim 8 (<c-@> corresponds to <c-space>):
+" imap <c-@> <Plug>(asyncomplete_force_refresh)
+
+" Preview Window
+"
+" allow modifying the completeopt variable, or it will
+" be overridden all the time
+let g:asyncomplete_auto_completeopt = 0
+
+set completeopt=menuone,noinsert,noselect,preview
+
+" To auto close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" ******************************************************************************
+" vim-lsp settings:
+"
+" Language Server Protocol (LSP)
+"
+" Python: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
+        \ })
+endif
+
+" Clangd: C/C++ https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Clangd
+if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd', '-background-index']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+
+" Bash: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Bash
+if executable('bash-language-server')
+  augroup LspBash
+    autocmd!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'bash-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+          \ 'allowlist': ['sh'],
+          \ })
+  augroup END
+endif
+
+" Copied from https://github.com/prabirshrestha/vim-lsp
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+" ******************************************************************************
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 " If you want to actually insert all characters, including special codes such as
 " Ctrl-H, you need to press Ctrl-R twice
