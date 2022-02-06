@@ -25,6 +25,7 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-rhubarb'
+Plug 'psf/black', { 'branch': 'stable' }
 
 
 " Initialize plugin system
@@ -126,6 +127,7 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Language Server Protocol (LSP)
 "
 " Python: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
+" Don't forget to run: pip install pydocstyle
 if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
@@ -223,11 +225,13 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>[g <plug>(lsp-previous-diagnostic)
     nmap <buffer> <leader>]g <plug>(lsp-next-diagnostic)
     nmap <buffer> <leader>K <plug>(lsp-hover)
+    nmap <buffer> <leader>L <plug>(lsp-document-symbol)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+	autocmd BufWritePre *.py execute ':Black'
     
     " refer to doc to add more commands
 endfunction
@@ -275,6 +279,8 @@ if executable("ag")
     set grepprg=ag\ --vimgrep\ $*
     set grepformat=%f:%l:%c:%m
 endif
+
+let g:black_linelength = 120
 
 " fzf shortcuts
 nnoremap <C-p> :Files<Cr>
