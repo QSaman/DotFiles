@@ -127,13 +127,14 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Language Server Protocol (LSP)
 "
 " Python: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
+" Note that pyls is deprecated. You should use pylsp: https://github.com/python-lsp/python-lsp-server
 " Don't forget to run: pip install pydocstyle
-if executable('pyls')
+if executable('pylsp')
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
         \ 'whitelist': ['python'],
-        \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
+        \ 'workspace_config': {'pylsp': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
         \ })
 endif
 
