@@ -11,7 +11,17 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 
-if !has('nvim')
+if has('nvim')
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'hrsh7th/nvim-cmp'
+    " For luasnip users.
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+else
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
