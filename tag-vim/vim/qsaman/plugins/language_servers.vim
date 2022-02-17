@@ -12,6 +12,21 @@ if executable('pylsp')
         \ })
 endif
 
+if executable('pyright-langserver') && 1 == 2
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyright-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
+        \ 'allowlist': ['python'],
+        \ 'workspace_config': {
+        \   'python': {
+        \     'analysis': {
+        \       'useLibraryCodeForTypes': v:true
+        \      },
+        \   },
+        \ }
+        \ })
+endif
+
 " Clangd: C/C++ https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Clangd
 if executable('clangd')
     au User lsp_setup call lsp#register_server({
