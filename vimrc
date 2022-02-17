@@ -149,6 +149,10 @@ if has("macunix") || has("mac")
     syntax on
     set backspace=indent,eol,start
     set hls
+    " Vim jump to the last position when reopening a file
+    if has("autocmd")
+        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    endif
 elseif has("win32") || has("win32unix")
     " echo 'win32 or win32unix'
     syntax on
