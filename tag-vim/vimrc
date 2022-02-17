@@ -24,7 +24,7 @@ if has('nvim')
 else
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/vim-lsp'
-    Plug 'mattn/vim-lsp-settings'
+    " Plug 'mattn/vim-lsp-settings'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
     Plug 'bfrg/vim-cpp-modern'
 endif
