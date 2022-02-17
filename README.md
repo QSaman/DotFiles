@@ -1,6 +1,6 @@
 # How to Install
 
-You need to install `rcm` first.
+First we need to install [rcm](https://github.com/thoughtbot/rcm).
 
 ## Fedora
 
@@ -14,28 +14,30 @@ $ sudo dnf install rcm
 $ sudo apt install rcm
 ```
 
-# Use the Dot Files
+For other platforms refer to the official [site](https://github.com/thoughtbot/rcm).
 
-It's not mandatory but it's recommended to clone the repo like this:
+# Usage
+
+It is recommended to clone this repository to `~/.dotfiles`:
 
 ```
 git clone https://github.com/QSaman/DotFiles.git ~/.dotfiles
 ```
 
-Then create the `~/.rcrc` with the following content. Feel free to change it according to your preferences. For more information run `man rcrc`.
+Then create `~/.rcrc` file with the following content. Feel free to change it according to your preferences:
 
 ```
 TAGS="vim tmux bash"
 EXCLUDES="README.md LICENSE"
 ```
 
-Then run the following command:
+For more information run `man rcrc`. Then run the following command:
 
 ```
 $ rcup -d "$PWD" -v
 ```
 
-After it make sure to source `~/.my_shellrc`. For Bash add the following line to `~/.bashrc`:
+Finally make sure to source `~/.my_shellrc`. For `bash` add the following line to `~/.bashrc`:
 
 ```
 . "$HOME"/.my_shellrc
@@ -46,3 +48,4 @@ For `zsh` you should use `~/.zshrc` instead.
 # References
 
 * [Fedora magazine](https://fedoramagazine.org/managing-dotfiles-rcm/).
+* [Official page](https://github.com/thoughtbot/rcm)
