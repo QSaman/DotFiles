@@ -1,5 +1,3 @@
-alias cmake_ycm="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-
 #Note that if X cannot be run during startup, vim cannot be run. In that case 
 #comment the following line or run /usr/bin/vim:
 if [ -e /usr/bin/vimx ]
@@ -7,7 +5,4 @@ then
 	alias vim="/usr/bin/vimx"
 fi
 
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
-. $HOME/.profile_custom
+. "$HOME"/.my_commonrc
