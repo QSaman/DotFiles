@@ -35,13 +35,13 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 "
 " Python: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
 " Note that pyls is deprecated. You should use pylsp: https://github.com/python-lsp/python-lsp-server
-" Don't forget to run: pip install pydocstyle
+" pip install "python-lsp-server[pyflakes]"
 if executable('pylsp')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pylsp',
         \ 'cmd': {server_info->['pylsp']},
         \ 'whitelist': ['python'],
-        \ 'workspace_config': {'pylsp': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
+        \ 'workspace_config': {'pylsp': {'plugins': {'pydocstyle': {'enabled': v:false}}}}
         \ })
 endif
 
