@@ -53,7 +53,7 @@ runtime macros/matchit.vim
 
 " ****************************Vim only******************************************
 if !has('nvim')
-    source ~/.vim/vim_settings.vim
+    source ~/.vim/qsaman/vim_settings.vim
 endif
 " ****************************Vim only Ends*************************************
 
@@ -68,9 +68,6 @@ if has('termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-
-" colorscheme wombat256
-" colorscheme molokai
 
 " For gruvbox settings refer to:
 " https://github.com/morhetz/gruvbox/wiki/Configuration 
