@@ -1,6 +1,5 @@
 if [[ -d /usr/local/opt/coreutils/libexec/gnubin ]]
 then
-	alias cmake_ycm="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
 	alias ls='ls -G'
 	alias egrep='egrep --color=auto' 
 	alias fgrep='fgrep --color=auto' 
