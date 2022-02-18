@@ -37,13 +37,11 @@ For more information run `man rcrc`. Then run the following command:
 $ rcup -d "$PWD" -v
 ```
 
-Finally make sure to source `~/.my_shellrc`. For `bash` add the following line to `~/.bashrc`:
+Finally make sure to source the correct shell: `~/.my_bashrc` for `bash` and `~/my_zshrc` for `zsh`. For `bash` add the following line to `~/.bashrc`:
 
 ```
-. "$HOME"/.my_shellrc
+. "$HOME"/.my_bashrc
 ```
-
-For `zsh` you should use `~/.zshrc` instead.
 
 # References
 

@@ -5,4 +5,4 @@ then
 	alias vim="/usr/bin/vimx"
 fi
 
-. "$HOME"/.my_commonrc
+. "$HOME"/.my_shellrc
