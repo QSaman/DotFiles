@@ -1,3 +1,6 @@
+" **Note** currently this file is not loaded
+
+
 " Language Server Protocol (LSP)
 "
 " Python: https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Python
@@ -12,7 +15,7 @@ if executable('pylsp')
         \ })
 endif
 
-if executable('pyright-langserver') && 1 == 2
+if executable('pyright-langserver')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyright-langserver',
         \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
