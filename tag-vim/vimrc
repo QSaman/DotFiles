@@ -40,6 +40,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'psf/black', { 'branch': 'stable' }
 
+if has('linux')
+	Plug 'kana/vim-fakeclip'
+endif
+
 
 " Initialize plugin system
 call plug#end()
@@ -106,18 +110,23 @@ set mouse+=a
 " set clipboard=unnamedplus
 
 " <C-V> in insert mode:
-inoremap <C-v> <C-r><C-r>+
+imap <C-v> <C-r>+
 " <C-v> in normal mode:
-nnoremap <C-v> a<C-r><C-r>+
+nmap <C-v> a<C-r>+
 " <C-v> in visual mode:
-vnoremap <C-v> d<ESC>i<C-r><C-r>+
+vmap <C-v> d<ESC>i<C-r>+
 " <C-c> in visual mode:
-vnoremap <C-c> "+y
-" <C-a> in insert mode
+vmap <C-c> "+y
+" <C-a> in insert mode (inoremap: insert no-recursive map):
 inoremap <C-a> <ESC>ggVG
-" <C-a> in normal mode:
+" <C-a> in normal mode (nnoremap: normal no-recursive map):
 nnoremap <C-a> <ESC>ggVG
 " in insert mode you can press 'CTRL-r *' or 'CTRL-r +' to paste form clipboard.
+
+" Vim doesn't support Wayland clipboard yet, so we should use fakeclip:
+if !has('nvim') && has('linux') && !has('gui_running')
+	let g:fakeclip_provide_clipboard_key_mappings = !empty($WAYLAND_DISPLAY)
+endif
 
 " Enable smart case:
 set ignorecase
