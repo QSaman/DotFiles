@@ -2,6 +2,8 @@
 " both pyslp and pyright are enabled. But pylsp is only  used for highlighting
 " parameters
 let g:lsp_settings_filetype_python = ['pylsp', 'pyright-langserver']
+" Settings references:
+" pyright: https://github.com/microsoft/pyright/blob/main/docs/settings.md and https://github.com/fannheyward/coc-pyright
  let g:lsp_settings = {
 	\'pylsp':
 	\{
@@ -23,7 +25,17 @@ let g:lsp_settings_filetype_python = ['pylsp', 'pyright-langserver']
 					\'rope_completion': {'enabled': v:false},
 					\'yapf': {'enabled': v:false},
 				\}
-			\}
+			\},
+		\}
+	\},
+	\'pyright-langserver':
+	\{
+		\'workspace_config':
+		\{
+			\'python':
+			\{
+				\'analysis': {'autoImportCompletions': v:true, 'autoSearchPaths': v:true},
+			\},
 		\}
 	\}
  \}
