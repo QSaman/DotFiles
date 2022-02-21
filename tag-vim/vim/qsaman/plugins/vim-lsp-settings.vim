@@ -14,7 +14,7 @@ let g:lsp_settings_filetype_python = ['pylsp', 'pyright-langserver']
 				\'plugins':
 				\{
 					\'pydocstyle': {'enabled': v:false},
-					\'jedi_completion': {'enabled': v:false, 'include_params': v:false, 'include_class_objects': v:false},
+					\'jedi_completion': {'enabled': v:false, 'include_params': v:true, 'include_class_objects': v:false},
 					\'jedi_definition': {'enabled': v:false, 'follow_imports': v:false, 'follow_builtin_imports': v:false},
 					\'jedi_hover': {'enabled': v:false},
 					\'jedi_references': {'enabled': v:false},
