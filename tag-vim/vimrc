@@ -48,7 +48,7 @@ endif
 " Initialize plugin system
 call plug#end()
 
-" See ~/.vim/after/ftplugin directory for language-based customization:
+" See ~/.vim/after/ftplugin and $VIMRUNTIME/ftplugin/ (:Explore $VIMRUNTIME/ftplugin) directories for language-based customization:
 filetype plugin indent on
 
 " set spell
