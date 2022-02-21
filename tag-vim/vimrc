@@ -49,6 +49,7 @@ endif
 call plug#end()
 
 " See ~/.vim/after/ftplugin and $VIMRUNTIME/ftplugin/ (:Explore $VIMRUNTIME/ftplugin) directories for language-based customization:
+" For more information :h filetype.txt
 filetype plugin indent on
 
 " set spell
