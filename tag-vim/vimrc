@@ -39,6 +39,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-rhubarb'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 if has('linux')
 	Plug 'kana/vim-fakeclip'
