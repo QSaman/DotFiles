@@ -27,7 +27,7 @@ git clone https://github.com/QSaman/DotFiles.git ~/.dotfiles
 Then create `~/.rcrc` file with the following content. Feel free to change it according to your preferences:
 
 ```
-TAGS="vim tmux bash"
+TAGS="nvim vim tmux bash"
 EXCLUDES="README.md LICENSE"
 ```
 
