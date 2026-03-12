@@ -1,3 +1,10 @@
 # Ideally this file shouldn't contain any specific shell commands (e..g bash)
 alias cmake_compile_commands="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
-export EDITOR=/usr/bin/vim
+
+if command -v nvim &>/dev/null; then
+    export EDITOR=nvim
+elif command -v vim &>/dev/null; then
+    export EDITOR=vim
+else
+    export EDITOR=vi
+fi
