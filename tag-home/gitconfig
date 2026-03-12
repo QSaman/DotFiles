@@ -4,14 +4,12 @@
 [help]
 	browser = firefox
 [merge]
-	tool = vimdiff
-	#tool = kdiff3
-[mergetool "kdiff3"]
-	trustExitCode = false
+	tool = nvimdiff
+[mergetool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$MERGED" "$REMOTE" -c "wincmd J"
 [diff]
-	guitool = vimdiff
-	#guitool = kdiff3
-[difftool "kdiff3"]
-	trustExitCode = false
+	tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = nvim -d "$LOCAL" "$REMOTE"
 [commit]
 	gpgsign = false
