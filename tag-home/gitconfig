@@ -5,10 +5,12 @@
 	browser = firefox
 [merge]
 	tool = nvimdiff
+	guitool = nvimdiff
 [mergetool "nvimdiff"]
   cmd = nvim -d "$LOCAL" "$MERGED" "$REMOTE" -c "wincmd J"
 [diff]
 	tool = nvimdiff
+	guitool = nvimdiff
 [difftool "nvimdiff"]
   cmd = nvim -d "$LOCAL" "$REMOTE"
 [commit]
